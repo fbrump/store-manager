@@ -1,6 +1,14 @@
 # Backend
 
-On this section, I will describe process related to the backend application.
+On this section, I will describe the process related to the backend application.
+
+# Introduction
+
+The back-end should be based on [Python](https://www.python.org/). Also, in another version, we could create or test the Rust using [Actix Web](https://actix.rs/).
+
+- [Django Restful](https://www.django-rest-framework.org/) (*Django REST framework is a powerful and flexible toolkit for building Web APIs*) or [FastAPI](https://fastapi.tiangolo.com/) (*FastAPI framework, high performance, easy to learn, fast to code, ready for production*)
+- [Poetry](https://python-poetry.org/) - Python packaging and dependency management made easy
+- [Podman](https://podman.io/) - Manage containers, pods, and images with Podman. Seamlessly work with containers and Kubernetes from your local environment.
 
 # How to
 
