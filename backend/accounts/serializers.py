@@ -6,6 +6,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ['url', 'username', 'email', 'groups']
+        read_only_fields = ['id',]
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):

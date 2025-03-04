@@ -12,7 +12,7 @@ class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     code = models.CharField(max_length=30, unique=True, db_index=True)
     name = models.CharField(max_length=60, null=False, blank=False)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=16, decimal_places=2)
     price_currency = models.CharField(
         max_length=3,
