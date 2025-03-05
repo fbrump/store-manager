@@ -20,3 +20,13 @@ class TransactionViewSet(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(created_by=request.user)
         return Response(serializer.data)
+
+class TransactionTopViewSet(viewsets.ViewSet):
+    """
+    A simple ViewSet for listing or retrieving users.
+    """
+    permission_classes = [permissions.IsAuthenticated]
+    versioning_class = versioning.NamespaceVersioning
+    def list(self, request):
+        queryset = Transaction.objects.count()
+        return Response({'count': queryset })
