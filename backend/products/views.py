@@ -1,6 +1,7 @@
 import logging
 from rest_framework import permissions, viewsets, versioning
 from rest_framework.response import Response
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from .models import Product, ProductCategory
 from .serializers import ProductSerializer, ProductCategorySerializer
 
@@ -14,6 +15,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all().order_by('-created_at')
     serializer_class = ProductSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning
     def create(self, request):
         serializer = ProductSerializer(data=request.data, context={'request': request})
@@ -28,6 +30,7 @@ class ProductCategoryViewSet(viewsets.ModelViewSet):
     queryset = ProductCategory.objects.all().order_by('-created_at')
     serializer_class = ProductCategorySerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning
     def create(self, request) -> Response:
         _logger.debug('[ Product Category ] Start to create a new category')
