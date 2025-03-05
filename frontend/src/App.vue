@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LayoutFooter from './components/layouts/LayoutFooter.vue';
+
 </script>
 
 <template>
@@ -19,11 +21,7 @@
       </main>
     </div>
   </section>
-  <footer class="h-30 bg-gray-700 text-center">
-    <p>
-      Footer
-    </p>
-  </footer>
+  <layout-footer></layout-footer>
 </template>
 
 <style scoped>
