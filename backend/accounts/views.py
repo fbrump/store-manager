@@ -1,5 +1,6 @@
 from django.contrib.auth.models import Group, User
 from rest_framework import permissions, viewsets, versioning
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 
 from tutorial.quickstart.serializers import GroupSerializer, UserSerializer
 
@@ -11,6 +12,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning
 
 class GroupViewSet(viewsets.ModelViewSet):
@@ -20,4 +22,5 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all().order_by('name')
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning

@@ -1,6 +1,7 @@
 import logging
 from rest_framework import permissions, viewsets, versioning
 from rest_framework.response import Response
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from .models import Transaction
 from .serializers import TransactionSerializer
 
@@ -14,6 +15,7 @@ class TransactionViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all().order_by('-created_at')
     serializer_class = TransactionSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning
     def create(self, request):
         serializer = TransactionSerializer(data=request.data, context={'request': request})
@@ -26,6 +28,7 @@ class TransactionTopViewSet(viewsets.ViewSet):
     A simple ViewSet for listing or retrieving users.
     """
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [SessionAuthentication, BasicAuthentication, TokenAuthentication]
     versioning_class = versioning.NamespaceVersioning
     def list(self, request):
         queryset = Transaction.objects.count()
