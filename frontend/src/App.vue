@@ -1,27 +1,15 @@
 <script setup lang="ts">
-import LayoutFooter from './components/layouts/LayoutFooter.vue';
+import LayoutFooter from './layouts/LayoutFooter.vue';
+import LayoutNav from './layouts/LayoutNav.vue';
 
 </script>
 
 <template>
-  <nav class="h-10 text-center bg-amber-600">
-    MENU
-  </nav>
-  <section class="h-dvh bg-amber-100">
-    <div class="container">
-      <header>
-        <h1>
-          Store Manager
-        </h1>
-      </header>
-      <main>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, natus! Expedita sint iusto ratione molestiae saepe ipsam? Rem, maiores totam? Doloribus hic totam animi, voluptatem et magnam! Assumenda, similique nihil.
-        </p>
-      </main>
-    </div>
+  <layout-nav></layout-nav>
+  <section class="h-dvh bg-amber-50">
+    <router-view></router-view>
   </section>
-  <layout-footer></layout-footer>
+  <layout-footer v-once></layout-footer>
 </template>
 
 <style scoped>

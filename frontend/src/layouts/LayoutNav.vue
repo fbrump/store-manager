@@ -1,0 +1,30 @@
+<script setup lang="ts">
+
+</script>
+
+<template>
+<nav class="h-10 text-center bg-amber-600">
+    <ul>
+        <li>
+            <router-link to="/" title="Go to dashboard">
+                Dashboard
+            </router-link>
+        </li>
+        <li>
+            <router-link to="/categories" title="Go to categories">
+                Categories
+            </router-link>
+        </li>
+        <li>
+            <router-link to="/products" title="Go to products">
+                Products
+            </router-link>
+        </li>
+        <li>
+            <router-link to="transactions" title="Go to transactions">
+             Transactions   
+            </router-link>
+        </li>
+    </ul>
+</nav>
+</template>
