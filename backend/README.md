@@ -22,6 +22,23 @@ poetry shell
 
 ```
 
+Or, execute the command to get the env, then execute it.
+
+```bash
+
+poetry env activate
+Creating virtualenv backend-api-vFPet_sk-py3.13 in /home/fbrump/.cache/pypoetry/virtualenvs
+
+```
+
+Then, execute the command to entre on this env.
+
+```bash
+
+source /home/fbrump/.cache/pypoetry/virtualenvs/backend-api-vFPet_sk-py3.13/bin/activatepoetry env active
+
+```
+
 Then, update the env with all dependencies.
 
 ```shell
