@@ -6,7 +6,7 @@
 <main>
     <header>
         <h1>
-            Category Details
+            Category {{ $route.params.id }} Details
         </h1>
     </header>
 </main>
