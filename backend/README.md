@@ -55,6 +55,14 @@ poetry env info --path
 
 ```
 
+Or, we can run it using direct poetry run.
+
+```bash
+
+poetry run python manage.py runserver 8081
+
+```
+
 ## Python
 
 After to set up the environment, we need to execute the command.
