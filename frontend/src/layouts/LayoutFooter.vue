@@ -7,7 +7,7 @@ const currentYear = ref(new Date().getFullYear());
 </script>
 
 <template>
-<footer class="h-80 bg-gray-700 text-center">
+<footer class="h-80 bg-gray-700 text-center text-gray-200">
   <p class="m-auto py-2.5 font-medium tracking-wider text-base">
     <em class="italic">"An investment in knowledge pays the best interest."</em> — Benjamin Franklin
   </p>
