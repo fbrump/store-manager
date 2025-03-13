@@ -9,11 +9,11 @@ defineProps<HeaderProps>()
 </script>
 
 <template>
-<header>
-    <h1>
+<header class="flex flex-col text-center">
+    <h1 class="text-2xl">
         {{ title }}
     </h1>
-    <h2 v-if="subtitle">
+    <h2 v-if="subtitle" class="text-lg">
         {{ subtitle }}
     </h2>
 </header>
