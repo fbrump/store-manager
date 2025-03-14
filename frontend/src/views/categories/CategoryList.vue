@@ -1,43 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import ViewHeader from '../../components/ViewHeader.vue';
+import ViewHeader from '@components/ViewHeader.vue';
 import type { Category } from './interfaces';
+import { useCategoriesStore } from '@stores/categorie';
 
 
-const categories = ref<Array<Category>>([
-    { 
-        id: "2856080a-e45d-4362-83e1-a727fbe22247",
-        name: "Keyboards",
-        active: true
-    },
-    { 
-        id: "2856080a-e45d-4362-83e1-a727fbe22250",
-        name: "Mouses",
-        active: false
-    },
-    { 
-        id: "2856080a-e45d-4362-83e1-a727fbe22260",
-        name: "Chairs",
-        active: true
-    },
-    { 
-        id: "2856080a-e45d-4362-83e1-a727fbe22270",
-        name: "Monitors",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, officiis. Aliquam labore autem odio et, ut fugit enim. Maiores maxime quae expedita dolorum minima facilis ratione enim adipisci amet tempore.",
-        active: true
-    },
-    {
-        id: "2856080a-e45d-4362-83e1-a727fbe22280",
-        name: "Headset",
-        active: false
-    },
-    { 
-        id: "2856080a-e45d-4362-83e1-a727fbe22290",
-        name: "Microphones",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, officiis. Aliquam labore autem odio et, ut fugit enim. Maiores maxime quae expedita dolorum minima facilis ratione enim adipisci amet tempore.",
-        active: true
-    },
-])
+const store = useCategoriesStore();
+
+const categories = ref<Array<Category>>(store.categories)
 
 </script>
 
