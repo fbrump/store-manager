@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    // "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2023"],
     "module": "ESNext",
@@ -18,16 +18,17 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
+    // "noUncheckedSideEffectImports": true,
 
     // all paths defined here must match the configured path in `vite.config.ts`
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@/*": [ "src/*" ],
-      "@components/*": ["src/components/*"],
-      "@views/*": ["src/views/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@assets/*": ["src/assets/*"]
+      "@/*": [ "/*" ],
+      "@components/*": ["components/*"],
+      "@views/*": ["views/*"],
+      "@layouts/*": ["layouts/*"],
+      "@assets/*": ["assets/*"],
+      "@stores/*": ["stores/*"]
     }
   },
   "include": ["vite.config.ts"]

@@ -9,7 +9,7 @@ import TransactionList from './views/transactions/TransactionList.vue'
 const routes = [
   { path: '/', component: DashboardIndex },
   { path: '/categories', component: CategoryList },
-  { path: '/categories/:id', component: CategoryDetail },
+  { path: '/categories/:id', component: CategoryDetail, props: true },
   { path: '/products', component: ProductList },
   { path: '/transactions', component: TransactionList },
 ]
