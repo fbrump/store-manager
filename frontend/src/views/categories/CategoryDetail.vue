@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import ViewHeader from '@components/ViewHeader.vue';
-import { useCategoriesStore } from '../../stores/categorie';
 import { ref } from 'vue';
+
+import ViewHeader from '@components/ViewHeader.vue';
+import { useCategoriesStore } from '@stores/categorie';
 import type { Category } from './interfaces';
 
 const props = defineProps<{
