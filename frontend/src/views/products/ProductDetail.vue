@@ -10,7 +10,7 @@ const props = defineProps<{
 
 const store = useProductStore();
 
-let product = ref<Product | null>(store.getById(props.id));
+const product = ref<Product | null>(store.getById(props.id));
 
 </script>
 
@@ -22,49 +22,43 @@ let product = ref<Product | null>(store.getById(props.id));
         <br />
         {{ product }}
         <br />
-        Code i.e. SKU, 
-        Name - string, 
-        Description - text, 
-        Price - number/decimal, 
-        Currency Type: euro or dollar,
-        Active - bool
         <form action="" method="post">
             <div>
                 <label for="code">
                     SKU
                 </label>
-                <input type="text" name="code" id="code" title="Product code" />
+                <input type="text" name="code" id="code" :value="product?.code" title="Product code" />
             </div>
             <div>
                 <label for="name">
                     Name
                 </label>
-                <input type="text" name="name" id="name" title="Product name" />
+                <input type="text" name="name" id="name" :value="product?.name" title="Product name" />
             </div>
             <div>
                 <label for="price">
                    Price 
                 </label>
-                <input type="number" name="price" id="price" title="Product price" />
+                <input type="number" name="price" id="price" :value="product?.price" title="Product price" />
             </div>
             <div>
                 <label for="currency">
                    Currency
                 </label>
-                <select name="currency" id="currency" title="Product price currency">
+                <select name="currency" id="currency" :value="product?.code" title="Product price currency">
                     <option value="EUR">Euro</option>
                     <option value="USD">Dollar USA</option>
                 </select>
             </div>
             <div>
                 <label for="active">Active</label>
-                <input type="checkbox" name="active" id="active" />
+                <input type="checkbox" name="active" id="active" :checked="product?.active" />
             </div>
             <div>
                 <label for="description">
                     Description
                 </label>
-                <textarea name="description" id="description" cols="30" rows="10">
+                <textarea name="description" id="description" :value="product?.description" cols="30" rows="10">
                 </textarea>
             </div>
             <button type="submit" title="Click to save">
