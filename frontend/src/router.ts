@@ -12,7 +12,7 @@ const routes = [
   { path: '/categories', component: CategoryList },
   { path: '/categories/:id', component: CategoryDetail, props: true },
   { path: '/products', component: ProductList },
-  { path: '/products/:id', component: ProductDetail },
+  { path: '/products/:id', component: ProductDetail, props: true },
   { path: '/transactions', component: TransactionList },
 ]
 
