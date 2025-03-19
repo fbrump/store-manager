@@ -1,72 +1,91 @@
 <script setup lang="ts">
-import ViewHeader from '../../components/ViewHeader.vue';
+import { ref } from 'vue';
+
+import ViewHeader from '@components/ViewHeader.vue';
+import type { Product } from './interfaces';
+import { useProductStore } from '@stores/products';
+
+
+const store = useProductStore();
+
+const products = ref<Array<Product>>(store.products);
 
 </script>
 
 <template>
-<main>
+<main class="flex flex-col">
     <view-header title="Products" subtitle="List of products"></view-header>
     <section>
         <a href="#/products/new" title="Go to form to insert a new one">
             Add New
         </a>
     </section>
-    <section>
-        <table>
-            <thead>
+    <section class="justify-center">
+        <table v-if="products.length > 0" class="border-collapse border border-gray-400 m-5 drop-shadow-md">
+            <thead class="bg-gray-200">
                 <tr>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                         Code
                     </th>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                        Name 
                     </th>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                        Description 
                     </th>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                        Price 
                     </th>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                        Category 
                     </th>
-                    <th>
+                    <th class="p-0.5 border-collapse border border-gray-400">
                        Actions 
                     </th>
                 </tr>
             </thead>
-            <tfoot>
+            <tfoot class="bg-gray-200">
                 <tr>
-                    <td colspan="6">
-                        Total items <strong>[Number]</strong>.
+                    <td colspan="6" class="py-1 text-center">
+                        Total items <strong class="font-semibold">{{ products.length }}</strong>.
                     </td>
                 </tr>
             </tfoot>
-            <tbody>
-                <tr>
-                    <td>
-                        123
+            <tbody class="bg-gray-100">
+                <tr v-for="item in products" class="hover:bg-gray-300 h-auto">
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                        {{ item.code }}
                     </td>
-                    <td>
-                        Corne V3
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                        {{ item.name }}
                     </td>
-                    <td>
-                        Split keyboard bluetooth with blue switchers and LP keykaps
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                        <p v-if="item.description">
+                            {{ item.description }}
+                        </p>
+                        <p v-else class="italic">
+                            -- Empty --
+                        </p>
                     </td>
-                    <td>
-                        250.00 Euro
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                       {{ item.price }} {{ item.priceCurrency }} 
                     </td>
-                    <td>
-                        Kayboards
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                       {{ item.category }} 
                     </td>
-                    <td>
-                        <a href="#products/123" title="Go to details">
+                    <td class="p-0.5 border-collapse border border-gray-400">
+                        <router-link :to="`products/${item.id}`" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" title="Go to details">
                             Details
-                        </a>
+                        </router-link>
                     </td>
                 </tr>
             </tbody>
         </table>
+        <div v-else> 
+            <h3 class="text-center text-xl font-mono text-orange-900 line-through">
+                There is no items :(
+            </h3>
+        </div>
     </section>
 </main>
 </template>

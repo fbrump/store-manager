@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+
 import ViewHeader from '@components/ViewHeader.vue';
 import type { Category } from './interfaces';
 import { useCategoriesStore } from '@stores/categorie';
@@ -7,7 +8,7 @@ import { useCategoriesStore } from '@stores/categorie';
 
 const store = useCategoriesStore();
 
-const categories = ref<Array<Category>>(store.categories)
+const categories = ref<Array<Category>>(store.categories);
 
 </script>
 
@@ -63,7 +64,7 @@ const categories = ref<Array<Category>>(store.categories)
                 </tr>
             </tbody>
         </table>
-        <div v-else class="">
+        <div v-else>
             <h3 class="text-center text-xl font-mono text-orange-900 line-through">
                 There is no items :(
             </h3>
