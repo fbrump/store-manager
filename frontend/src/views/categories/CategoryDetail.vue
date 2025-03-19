@@ -11,7 +11,7 @@ const props = defineProps<{
 
 const store = useCategoriesStore();
 
-let category = ref<Category | null>(store.getById(props.id));
+const category = ref<Category | null>(store.getById(props.id));
 
 </script>
 
@@ -25,17 +25,17 @@ let category = ref<Category | null>(store.getById(props.id));
                 <label for="name">
                     Name
                 </label>
-                <input type="text" name="name" id="name" title="Category name" :module="category.name" :value="category?.name" @input="e => category?.name" />
+                <input type="text" name="name" id="name" title="Category name" :value="category?.name" />
             </div>
             <div>
                 <label for="active">Active</label>
-                <input type="checkbox" name="active" id="active" :model="category?.active" :checked="category.active" />
+                <input type="checkbox" name="active" id="active" :checked="category?.active" />
             </div>
             <div>
                 <label for="description">
                     Description
                 </label>
-                <textarea name="description" id="description" cols="30" rows="10" :model="category?.description">
+                <textarea name="description" id="description" cols="30" rows="10" :value="category?.description" >
                 </textarea>
             </div>
             <button type="submit">
