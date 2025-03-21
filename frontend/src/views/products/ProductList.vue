@@ -13,20 +13,14 @@ const products = ref<Array<Product>>(store.products);
 </script>
 
 <template>
-<main class="flex flex-col">
+<main class="flex flex-col gap-1.5">
     <view-header title="Products" subtitle="List of products"></view-header>
     <section class="justify-items-center">
-        <div class="w-full max-w-xs">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <div class="mb-4">
-                    <a href="#/products/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" title="Go to form to insert a new one">
-                        Add New
-                    </a>
-                </div>
-            </form>
+        <div class="md:container gap-1 text-right">
+            <router-link to="/products/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" title="Go to form to insert a new one">
+                Add New
+            </router-link>
         </div>
-    </section>
-    <section class="justify-items-center">
         <table v-if="products.length > 0" class="border-collapse border border-gray-400 m-5 drop-shadow-md">
             <thead class="bg-gray-200">
                 <tr>
