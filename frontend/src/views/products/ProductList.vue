@@ -8,7 +8,7 @@ import { useProductStore } from '@stores/products';
 
 const store = useProductStore();
 
-const products = ref<Array<Product>>(store.products);
+const products = ref<Array<Product>>(store.getAll);
 
 </script>
 
