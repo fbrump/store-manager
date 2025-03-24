@@ -4,6 +4,7 @@ import { useProductStore } from '@stores/products';
 import { ref } from 'vue';
 import type { Product } from './interfaces';
 
+
 const props = defineProps<{
     id:string,
 }>();

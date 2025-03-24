@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import ViewHeader from '@components/ViewHeader.vue';
+import type { Transaction } from './interfaces';
+import { useTransactionsStore  } from '@stores/transactions';
+
+
+const store = useTransactionsStore();
+
+const transactions = ref<Array<Transaction>>(store.getAll);
 
 </script>
 
@@ -9,7 +17,7 @@ import ViewHeader from '@components/ViewHeader.vue';
     <section>
         <div>
         </div>
-        <table>
+        <table v-if="transactions">
             <thead>
                 <tr>
                     <th>
@@ -38,39 +46,39 @@ import ViewHeader from '@components/ViewHeader.vue';
             <tfoot>
                 <tr>
                     <td colspan="7">
-                        Total items <strong class="font-semibold">0</strong>.
+                        Total items <strong class="font-semibold">{{ transactions.length }}</strong>.
                     </td>
                 </tr>
             </tfoot>
             <tbody>
-                <tr>
+                <tr v-for="item in transactions">
                     <td>
-                        3748290
+                        {{ item.id }}
                     </td>
                     <td>
-                        T-Shart
+                        {{ item.product }}
                     </td>
                     <td>
-                        Clouth
+                        {{ item.category }}
                     </td>
                     <td>
-                        Employee 1
+                        {{ item.user }}
                     </td>
                     <td>
-                        In
+                        {{ item.type }}
                     </td>
                     <td>
-                        5
+                        {{ item.amount }}
                     </td>
                     <td>
-                        <a href="#details">
+                        <router-link :to="`transactions/${ item.id }`">
                             Details
-                        </a>
+                        </router-link>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div> 
+        <div v-else> 
             <h3> 
                 There is no items :(
             </h3>

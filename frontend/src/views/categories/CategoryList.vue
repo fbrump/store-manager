@@ -3,12 +3,12 @@ import { ref } from 'vue';
 
 import ViewHeader from '@components/ViewHeader.vue';
 import type { Category } from './interfaces';
-import { useCategoriesStore } from '@stores/categorie';
+import { useCategoriesStore } from '@stores/categories';
 
 
 const store = useCategoriesStore();
 
-const categories = ref<Array<Category>>(store.categories);
+const categories = ref<Array<Category>>(store.getAll);
 
 </script>
 

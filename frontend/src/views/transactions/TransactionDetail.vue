@@ -6,7 +6,7 @@
 <main>
     <header>
         <h1>
-            Product Details
+            Transaction Details
         </h1>
     </header>
 </main>
