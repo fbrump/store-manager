@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 
 import ViewHeader from '@components/ViewHeader.vue';
+import TableEmpty from '@components/TableEmpty.vue';
 import type { Product } from './interfaces';
 import { useProductStore } from '@stores/products';
 
@@ -21,45 +22,47 @@ const products = ref<Array<Product>>(store.getAll);
                 Add New
             </router-link>
         </div>
-        <table v-if="products.length > 0" class="border-collapse border border-gray-400 m-5 drop-shadow-md">
-            <thead class="bg-gray-200">
+        <table v-if="products.length > 0">
+            <thead>
                 <tr>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th>
                         Code
                     </th>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th>
                        Name 
                     </th>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th>
                        Description 
                     </th>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th class="w-24">
                        Price 
                     </th>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th>
                        Category 
                     </th>
-                    <th class="p-0.5 border-collapse border border-gray-400">
+                    <th>
                        Actions 
                     </th>
                 </tr>
             </thead>
-            <tfoot class="bg-gray-200">
+            <tfoot>
                 <tr>
-                    <td colspan="6" class="py-1 text-center">
+                    <td colspan="6">
                         Total items <strong class="font-semibold">{{ products.length }}</strong>.
                     </td>
                 </tr>
             </tfoot>
-            <tbody class="bg-gray-100">
-                <tr v-for="item in products" class="hover:bg-gray-300 h-auto">
-                    <td class="p-0.5 border-collapse border border-gray-400">
+            <tbody>
+                <tr v-for="item in products">
+                    <td>
+                        <code>
                         {{ item.code }}
+                        </code>
                     </td>
-                    <td class="p-0.5 border-collapse border border-gray-400">
+                    <td>
                         {{ item.name }}
                     </td>
-                    <td class="p-0.5 border-collapse border border-gray-400">
+                    <td>
                         <p v-if="item.description">
                             {{ item.description }}
                         </p>
@@ -67,25 +70,21 @@ const products = ref<Array<Product>>(store.getAll);
                             -- Empty --
                         </p>
                     </td>
-                    <td class="p-0.5 border-collapse border border-gray-400">
+                    <td class="w-24 text-center">
                        {{ item.price }} {{ item.priceCurrency }} 
                     </td>
-                    <td class="p-0.5 border-collapse border border-gray-400">
+                    <td>
                        {{ item.category }} 
                     </td>
-                    <td class="p-0.5 border-collapse border border-gray-400">
-                        <router-link :to="`products/${item.id}`" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" title="Go to details">
+                    <td class="text-center">
+                        <router-link :to="`products/${item.id}`" title="Go to details">
                             Details
                         </router-link>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <div v-else> 
-            <h3 class="text-center text-xl font-mono text-orange-900 line-through">
-                There is no items :(
-            </h3>
-        </div>
+        <table-empty v-else></table-empty>
     </section>
 </main>
 </template>

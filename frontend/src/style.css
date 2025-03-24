@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+/** table - Start **/
+table {
+    @apply border-collapse border border-gray-400 m-5 drop-shadow-md;
+}
+
+table > thead {
+    @apply bg-gray-200;
+}
+
+table thead th {
+    @apply p-1 border-collapse border border-gray-400;
+}
+
+table > tfoot{
+    @apply bg-gray-200;
+}
+
+table tfoot td {
+    @apply py-1 text-center;
+}
+
+table > tbody {
+    @apply bg-gray-100;
+}
+
+table tbody > tr {
+    @apply hover:bg-gray-300 h-auto;
+}
+
+table tbody tr > td {
+    @apply p-1 border-collapse border border-gray-400;
+}
+
+table tbody a {
+    @apply font-medium text-blue-600 dark:text-blue-500 hover:underline;
+}
+
+/** table - End **/

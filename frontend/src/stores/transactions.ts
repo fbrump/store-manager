@@ -6,6 +6,7 @@ export const useTransactionsStore = defineStore('transactions', () => {
     /// state
     const transactions = ref<Array<Transaction>>([{
             id: 'e12be4c6-bdcb-46ae-bf4b-f6e9e404b759',
+            user: 'Tonny',
             type: 'In',
             amount: 5,
             product: 'T-Shirt Nike',
