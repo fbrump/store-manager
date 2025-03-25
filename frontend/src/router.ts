@@ -15,7 +15,7 @@ const routes = [
   { path: '/products', component: ProductList },
   { path: '/products/:id', component: ProductDetail, props: true },
   { path: '/transactions', component: TransactionList },
-  { path: '/transactions/:id', component: TransactionDetail, pros: true },
+  { path: '/transactions/:id', component: TransactionDetail, props: true },
 ]
 
 const router = createRouter({

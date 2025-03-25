@@ -21,7 +21,7 @@
             </router-link>
         </li>
         <li class="mx-2">
-            <router-link to="transactions" title="Go to transactions">
+            <router-link to="/transactions" title="Go to transactions">
              Transactions   
             </router-link>
         </li>

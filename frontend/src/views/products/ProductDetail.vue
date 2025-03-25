@@ -19,9 +19,7 @@ const product = ref<Product | null>(store.getById(props.id));
 <main class="flex flex-col">
     <view-header title="Product Details" subtitle="Show details of the product"/>
     <section class="justify-items-center">
-        {{ product }}
-        <br />
-        <form action="" method="post" class="w-full max-w-sm bg-white p-4">
+        <form v-if="product" action="" method="post" class="w-full max-w-sm bg-white p-4">
             <div class="md:flex md:items-center mb-6">
                 <div class="md:w-1/3">
                     <label for="code" class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
