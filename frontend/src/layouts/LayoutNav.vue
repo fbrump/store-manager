@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-<nav class="h-10 text-center bg-gray-700 text-white font-semibold">
-    <ul class="flex flex-row justify-center">
+<nav class="h-14 text-center bg-gray-700 text-white font-semibold">
+    <ul class="flex flex-row justify-center content-center">
         <li class="mx-2">
             <router-link to="/" title="Go to dashboard">
                 Dashboard
