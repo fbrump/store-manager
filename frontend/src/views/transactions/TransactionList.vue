@@ -15,13 +15,13 @@ const transactions = ref<Array<Transaction>>(store.getAll);
 <template>
 <main class="flex flex-col gap-1.5">
     <view-header title="Transactions" subtitle="List of transactions"></view-header>
-    <section class="justify-items-center">
+    <section class="flex flex-col">
         <div class="md:container gap-1 text-right">
-            <router-link to="/products/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" title="Go to form to insert a new one">
+            <router-link to="/transactions/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" title="Go to form to insert a new one">
                 Add New
             </router-link>
         </div>
-        <table v-if="transactions.length > 0"> 
+        <table v-if="transactions.length > 0">
             <thead>
                 <tr>
                     <th>
