@@ -19,7 +19,3 @@ const currentYear = ref(new Date().getFullYear());
   </p>
 </footer>  
 </template>
-
-<style scoped>
-
-</style>

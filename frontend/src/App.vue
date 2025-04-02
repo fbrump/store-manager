@@ -5,11 +5,13 @@ import LayoutNav from './layouts/LayoutNav.vue';
 </script>
 
 <template>
-  <layout-nav></layout-nav>
-  <section class="h-dvh bg-amber-50">
-    <router-view></router-view>
-  </section>
-  <layout-footer v-once></layout-footer>
+  <div class="flex flex-col h-screen justify-between bg-amber-50">
+    <layout-nav v-once></layout-nav>
+    <section>
+      <router-view></router-view>
+    </section>
+    <layout-footer v-once class="sticky bottom-0 w-full mt-auto"></layout-footer>
+  </div>
 </template>
 
 <style scoped>
