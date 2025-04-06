@@ -10,8 +10,8 @@
             </router-link>
         </li>
         <li class="mx-2">
-            <router-link to="/categories" title="Go to categories">
-                Categories
+            <router-link to="/transactions" title="Go to transactions">
+             Transactions   
             </router-link>
         </li>
         <li class="mx-2">
@@ -20,8 +20,8 @@
             </router-link>
         </li>
         <li class="mx-2">
-            <router-link to="/transactions" title="Go to transactions">
-             Transactions   
+            <router-link to="/categories" title="Go to categories">
+                Categories
             </router-link>
         </li>
     </ul>
