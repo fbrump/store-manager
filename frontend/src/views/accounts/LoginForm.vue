@@ -6,29 +6,29 @@
 <main class="flex flex-col">
     <view-header title="Product Details" subtitle="Show details of the product"/>
     <section class="justify-items-center">
-        <form action="" method="post">
+        <form action="" method="post"> 
             <div>
                 <div class="md:w-1/3">
-                    <label for="login">
+                    <label for="login" class="uppercase">
                        Login
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input type="email" id="login" name="login" placeholder="Enter with the login" title="Enter with the login" autofocus />
+                    <input type="email" id="login" name="login" autofocus required placeholder="Enter with the login" title="Enter with the login" />
                 </div>
             </div>
             <div>
                 <div class="md:w-1/3">
-                    <label for="password">
+                    <label for="password" class="uppercase">
                         Password
                     </label>
                 </div>
                 <div class="md:w-2/3">
-                    <input type="email" id="password" name="password" placeholder="Enter with the password" title="Enter with the password" />
+                    <input type="password" id="password" name="password" placeholder="Enter with the password" required title="Enter with the password" />
                 </div>
             </div>
             <div>
-                <button type="submit" title="Login">
+                <button type="submit" title="Login" class="w-full">
                     Login
                 </button>
             </div>
