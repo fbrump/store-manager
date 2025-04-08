@@ -7,6 +7,7 @@ import ProductList from './views/products/ProductList.vue'
 import TransactionList from './views/transactions/TransactionList.vue'
 import ProductDetail from './views/products/ProductDetail.vue';
 import TransactionDetail from './views/transactions/TransactionDetail.vue';
+import LoginForm from './views/accounts/LoginForm.vue';
 
 const routes = [
   { path: '/', component: DashboardIndex },
@@ -16,6 +17,7 @@ const routes = [
   { path: '/products/:id', component: ProductDetail, props: true },
   { path: '/transactions', component: TransactionList },
   { path: '/transactions/:id', component: TransactionDetail, props: true },
+  { path: '/login', component: LoginForm },
 ]
 
 const router = createRouter({
