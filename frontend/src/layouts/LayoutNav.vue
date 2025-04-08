@@ -24,6 +24,11 @@
                 Categories
             </router-link>
         </li>
+        <li class="mx-2">
+            <router-link to="/login" title="Go to login">
+                Login
+            </router-link>
+        </li>
     </ul>
 </nav>
 </template>
