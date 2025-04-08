@@ -25,9 +25,15 @@
             </router-link>
         </li>
         <li class="mx-2">
-            <router-link to="/login" title="Go to login">
+            [
+            <router-link to="/login" title="Go to login form">
                 Login
             </router-link>
+            |
+            <router-link to="/logout" title="Logout">
+                Logout
+            </router-link>
+            ]
         </li>
     </ul>
 </nav>
