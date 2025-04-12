@@ -42,7 +42,7 @@ export const useProductStore = defineStore('product', () => {
 
     // actions
     const getById = (id: string): Product | null => {
-        var data: Array<Product> = products.value.filter(item => item.id == id);
+        var data: Array<Product> = products.value.filter((item: Product) => item.id == id);
         return data === undefined ? null : data[0];
     };
 
