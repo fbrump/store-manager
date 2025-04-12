@@ -19,17 +19,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     // "noUncheckedSideEffectImports": true,
-
-    // all paths defined here must match the configured path in `vite.config.ts`
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": [ "/*" ],
-      "@components/*": ["components/*"],
-      "@views/*": ["views/*"],
-      "@layouts/*": ["layouts/*"],
-      "@assets/*": ["assets/*"],
-      "@stores/*": ["stores/*"]
-    }
   },
   "include": ["vite.config.ts"]
 }
