@@ -20,7 +20,7 @@ export const useTransactionsStore = defineStore('transactions', () => {
 
     // actions
     const getById = (id: string): Transaction | null => {
-        var data: Array<Transaction> = transactions.value.filter(item => item.id == id);
+        var data: Array<Transaction> = transactions.value.filter((item: Transaction) => item.id == id);
         return data === undefined ? null : data[0];
     };
 

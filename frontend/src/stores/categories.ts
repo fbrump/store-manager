@@ -44,7 +44,7 @@ export const useCategoriesStore = defineStore('categories', () => {
 
     // actions
     const getById = (id: string): Category | null => {
-        var data: Array<Category> = categories.value.filter(item => item.id == id);
+        var data: Array<Category> = categories.value.filter((item: Category) => item.id == id);
         return data === undefined ? null : data[0];
     };
 
